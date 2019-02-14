@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <title>Metro Rail Alerts</title>
+    <META http-equiv="refresh" content="900;URL=https://www.metro.net/interactives/thelab/alerts_ticker/rail/">
+    <link href="https://www.metro.net/interactives/thelab/alerts_ticker/rail/css/vscroller.css" rel="stylesheet" type="text/css" />
+    <script src="https://www.metro.net/interactives/thelab/alerts_ticker/rail/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="https://www.metro.net/interactives/thelab/alerts_ticker/rail/js/jquery.easing.min.js" type="text/javascript"></script>
+    <script src="https://www.metro.net/interactives/thelab/alerts_ticker/rail/js/jquery.easy-ticker.min.js" type="text/javascript"></script>
+    <script src="https://www.metro.net/interactives/thelab/alerts_ticker/rail/js/vscroller.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      function scroll() {
+        var dd = $('.vticker').easyTicker({
+          direction: 'up',
+          easing: 'easeInOutCirc',
+          speed: 'medium',
+          interval: 5000,
+          height: '1920px',
+          visible: 0,
+          mousePause: 0
+        }).data('easyTicker');
+      }
+
+      function date_time(id) {
+        date = new Date;
+
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+
+        h = date.getHours();
+        if (h < 10) {
+          h = "0" + h;
+        }
+
+        m = date.getMinutes();
+        if (m < 10) {
+          m = "0" + m;
+        }
+
+        s = date.getSeconds();
+        if (s < 10) {
+          s = "0" + s;
+        }
+
+        result = 'Status as of: ' + days[day] + ' ' + months[month] + ' ' + d + ', ' + year + ' ' + h + ':' + m + ':' + s;
+        document.getElementById(id).innerHTML = result;
+        return true;
+      }
+
+      $(document).ready(function() {
+        date_time('date_time');
+        $.vscroller();
+        scroll();
+      });
+
+
+
+      window.setInterval(function() {
+        date_time('date_time');
+        $.vscroller();
+      }, 30000);
+
+    </script>
+
+    <style type="text/css">
+      .vticker {
+        border: 0px solid red;
+        width: 100%;
+      }
+
+      .vticker ul {
+        padding: 0;
+        width: 100%;
+      }
+
+      .vticker li {
+        list-style: none;
+        border-bottom: 0px solid green;
+        padding: 0px;
+      }
+
+      .et-run {
+        background: red;
+      }
+
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        font-size: 55px;
+        background-color: #000;
+        color: #fff;
+        font-family: helvetica;
+        overflow: hidden;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div style="width:100%; background-color:#1C1C1C; text-align:left;">
+      <img src="https://www.metro.net/interactives/thelab/alerts_ticker/rail/imgs/header.gif" />
+    </div>
+    <div id="date_time"></div>
+    <div class="vticker">
+      <ul id="instafeed">
+        <li>
+          <div class="blueLine" id="blueLine"><img src="https://www.metro.net/interactives/thelab/alerts_ticker/rail/imgs/blue.gif" /><b>Blue Line</b>
+            <div class="blueBox" id="blueBox">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="expoLine" id="expoLine"><img src="https://www.metro.net/interactives/thelab/alerts_ticker/rail/imgs/expo.gif" /><b>Expo Line</b>
+            <div class="expoBox" id="expoBox">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="goldLine" id="goldLine"><img src="https://www.metro.net/interactives/thelab/alerts_ticker/rail/imgs/gold.gif" /><b>Gold Line</b>
+            <div class="goldBox" id="goldBox">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="greenLine" id="greenLine"><img src="https://www.metro.net/interactives/thelab/alerts_ticker/rail/imgs/green.gif" /><b>Green Line</b>
+            <div class="greenBox" id="greenBox">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="redLine" id="redLine"><img src="https://www.metro.net/interactives/thelab/alerts_ticker/rail/imgs/red.gif" /><b>Red Line</b>
+            <div class="redBox" id="redBox">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="purpleLine" id="purpleLine"><img src="https://www.metro.net/interactives/thelab/alerts_ticker/rail/imgs/purple.gif" /><b>Purple Line</b>
+            <div class="purpleBox" id="purpleBox">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+
+</html>
