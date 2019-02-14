@@ -18,7 +18,7 @@ var vloc = io
     .then(response => {
         socket.emit('data', {data:infoArr(response.data.alerts)});
         //socket.emit('data', {data:alertData});
-        time = 1000
+        time = 30000
     })
     // .then(response => {
     //     setInterval(()=> {

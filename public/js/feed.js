@@ -31,7 +31,7 @@ $(document).ready(function() {
     scroll();
     window.setInterval(function() {
         date_time('date_time');
-    }, 30000);
+    }, 1000);
     
 });
 
