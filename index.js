@@ -1,14 +1,20 @@
 const axios = require('axios')
 const express = require('express');
 const app = express();
-const http = require('http').Server(app);
-const port = process.env.PORT || 8686;
+//const http = require('http').Server(app);
+const path = require('path')
+const PORT = process.env.PORT || 8686;
+const INDEX = path.join(__dirname, 'index.html');
+const server = express()
+.use((req, res) => res.sendFile(INDEX) )
+.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
 const url = 'https://alerts.metroservices.io/developer/api/v2/alerts?api_key=4oJedLBt80WP-d7E6Ekf5w&format=json'
-const io = require('socket.io')(http);
+const io = require('socket.io')(server);
 const _ = require('lodash');
 const alertData = require('./alertdata')
 var time = 0
-app.use(express.static('public'))
+//app.use(express.static('public'))
 
 
 var vloc = io
@@ -61,6 +67,6 @@ function infoArr (alert_data){
     return bucket
 
 }
-http.listen(port, function(){
-    console.log('listening on *:' + port);
-});
+// http.listen(port, function(){
+//     console.log('listening on *:' + port);
+// });
