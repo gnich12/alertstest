@@ -1,0 +1,93 @@
+body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        font-size: 55px;
+        background-color: #000;
+        color: #fff;
+        font-family: helvetica;
+        overflow: hidden;
+}
+#date_time{
+    position:absolute;
+      margin-top:-60px;
+      margin-left:170px;
+  font-size:35px;
+  }
+  
+  .vticker img{
+  padding:30px;
+      
+  }
+  .vticker b{
+      margin-top: 22px;
+      margin-left:00px;
+      position:absolute;
+      font-family: helvetica;
+      font-size:100px;
+      
+  }
+  .block ul li {
+        background-color:#333;
+        padding:20px 20px 20px 50px;
+  }
+  #expoItems li,
+  #blueItems li,
+  #greenItems li,
+  #redItems li,
+  #blueItems li,
+  #goldItems li,
+  #purpleItems li {
+        padding:20px 20px 20px 50px;
+        font-size:60px;
+        background-color:#333;
+  }
+  
+  #blueItems li.blueblock {
+        padding:20px 20px 20px 50px;
+        font-size:60px;
+        background-color:#0171bb;
+  }
+  #expoItems li.expoblock {
+        padding:20px 20px 20px 50px;
+        font-size:60px;
+        background-color:#00a4e4; 
+  }
+  
+  #goldItems li.goldblock{
+          background-color:#ffb613;
+  }
+  
+  #redItems li.redblock{
+          background-color:#e22a32;
+  }
+  
+  #greenItems li.greenblock{
+          background-color:#6ebe69;
+  }
+  
+  #purpleItems li.purpleblock{
+          background-color:#a55da9;
+  }
+
+  .vticker {
+        border: 0px solid red;
+        width: 100%;
+   }
+
+.vticker ul {
+padding: 0;
+width: 100%;
+}
+
+.vticker li {
+list-style: none;
+border-bottom: 0px solid green;
+padding: 0px;
+}
+
+.et-run {
+background: red;
+}
+
